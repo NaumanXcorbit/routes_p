@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   get "authors", to: "publishers#index"
   get "public", action: :index, controller: 'publishers'
-  resources :publishers do
+  resources :publishers, except: :destroy do
     collection do
       get :search
     end
