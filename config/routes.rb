@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "publishers#index"
+  get 'こんにちは', to: 'admin/articles#index'
   resources :magazines do
     resources :ads
   end
