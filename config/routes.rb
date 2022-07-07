@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   end
   get "authors", to: "publishers#index"
   get "public", action: :index, controller: 'publishers'
-  resources :publishers
+  resources :publishers do
+    collection do
+      get :search
+    end
+    member do
+      get :profile
+    end
+  end
   namespace :admin do
-
     resources :articles
   end
   scope 'customer' do

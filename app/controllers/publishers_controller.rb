@@ -50,6 +50,11 @@ class PublishersController < ApplicationController
     end
   end
 
+  def profile
+  end
+  def search
+  end
+
   private
     def set_publisher
       @publisher = Publisher.find(params[:id])
