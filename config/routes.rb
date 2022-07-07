@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :articles
   end
   scope 'customer' do
-    resources :books
+    resources :books, as: 'readable'
   end
 end
