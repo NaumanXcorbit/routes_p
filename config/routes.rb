@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "publishers#index"
   get 'こんにちは', to: 'admin/articles#index'
   resources :magazines do
-    resources :ads
+    resources :ads, path_names: {new: 'make', edit: 'change'}
   end
   get "authors", to: "publishers#index"
   get "public", action: :index, controller: 'publishers'
