@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root "publishers#index"
   resources :magazines do
     resources :ads
   end
