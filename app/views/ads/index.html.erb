@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Magazine</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.title %></td>
+        <td><%= ad.magazine_id %></td>
+        <td><%= link_to 'Show', magazine_ad_path(ad.magazine_id, ad) %></td>
+        <td><%= link_to 'Edit', edit_magazine_ad_path(ad.magazine_id, ad) %></td>
+        <td><%= link_to 'Destroy', magazine_ad_path(ad.magazine_id, ad), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ad', new_magazine_ad_path %>

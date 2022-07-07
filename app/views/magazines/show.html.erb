@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @magazine.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @magazine.description %>
+</p>
+
+<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+<%= link_to 'Back', magazines_path %> |
+<%= link_to 'New Ad', new_magazine_ad_path(@magazine) %>
