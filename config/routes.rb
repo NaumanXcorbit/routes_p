@@ -18,10 +18,14 @@ Rails.application.routes.draw do
     resources :articles, only: [:index, :show]
   end
   scope 'customer' do
-    resources :books, as: 'readable'
+    resources :books, as: 'readable', concern: :commentable
   end
 
   resources :posts, shallow: true do
+    resources :comments
+  end
+
+  concern :commentable do
     resources :comments
   end
 end
