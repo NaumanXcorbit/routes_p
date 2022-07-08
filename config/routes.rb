@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
   namespace :admin do
-    resources :articles, only: [:index, :show]
+    resources :articles
   end
   scope 'customer' do
     resources :books, as: 'readable', concern: :commentable

@@ -3,6 +3,13 @@ class Admin::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.html
+      # f.xml {render xml: @articles.as_json(only: [:id, :title]) }
+      format.xml  {render :'admin/articles/index.xml'}
+      # format.json {render :json => @articles.as_json(except: [:created_at, :updated_at])}
+      format.json {render :'admin/articles/index.json'}
+    end
   end
 
   def show
@@ -21,7 +28,7 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to admin_article_url(@article), notice: "Article was successfully created." }
+        format.html { redirect_to admin_article_path(@article), notice: "Article was successfully created." }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
