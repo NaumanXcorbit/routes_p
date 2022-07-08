@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   scope 'customer' do
     resources :books, as: 'readable'
   end
+
+  resources :posts, shallow: true do
+    resources :comments
+  end
 end
