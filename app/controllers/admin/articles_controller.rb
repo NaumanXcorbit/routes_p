@@ -25,7 +25,6 @@ class Admin::ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
     respond_to do |format|
       if @article.save
         format.html { redirect_to admin_article_path(@article), notice: "Article was successfully created." }
@@ -64,6 +63,6 @@ class Admin::ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :description)
+      params.require(:article).permit(:title, :description, :image)
     end
 end
