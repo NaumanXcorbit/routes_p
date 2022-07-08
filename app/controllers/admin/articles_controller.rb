@@ -9,6 +9,7 @@ class Admin::ArticlesController < ApplicationController
       format.xml  {render :'admin/articles/index.xml'}
       # format.json {render :json => @articles.as_json(except: [:created_at, :updated_at])}
       format.json {render :'admin/articles/index.json'}
+      format.atom
     end
   end
 
