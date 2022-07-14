@@ -1,6 +1,7 @@
 <tr id="bookRow_<%= book.id %>">
   <td><%= book.name %></td>
   <td><%= book.price %></td>
+  <td><%= formatted_date(book.created_at) %></td>
   <td>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

@@ -9,6 +9,11 @@
       <strong>Price:</strong>
       <%= book.price %>
     </p>
+
+    <p>
+      <strong>Published:</strong>
+      <%= formatted_date(book.created_at) %>
+    </p>
   </div>
 </div>
 <div class="modal-footer">

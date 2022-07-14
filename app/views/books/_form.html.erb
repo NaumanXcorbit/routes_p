@@ -10,6 +10,11 @@
       <%= form.label :price %>
       <%= form.number_field :price,class: 'form-control' %>
     </div>
+
+    <div class="form-group">
+      <%= form.label :published %>
+      <%= form.date_field :created_at,class: 'form-control' %>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary close_modal" data-bs-dismiss="modal">Close</button>
