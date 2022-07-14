@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :articles
   end
   scope 'customer' do
-    resources :books, as: 'readable', concern: :commentable
+    resources :books, concern: :commentable
   end
 
   resources :posts, shallow: true do
