@@ -1,0 +1,6 @@
+<% if @book.errors.any? %>
+alert('error')
+<% else %>
+$('#bookRow_<%= @book.id %>').replaceWith("<%= escape_javascript render('book_row', book: @book) %>");
+$('.close_modal').click()
+<% end %>
