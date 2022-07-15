@@ -7,6 +7,8 @@ class Book < ApplicationRecord
    before_validation :remove_white_space
    after_validation :name_capitalize
 
+   enum status: { pending: 0, active: 1, archived: 2
+   }
    def remove_white_space
       self.name.strip!
    end
