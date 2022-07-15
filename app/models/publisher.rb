@@ -3,6 +3,7 @@ class Publisher < ApplicationRecord
   validates :email, uniqueness: true, on: :create, allow_blank: true
   after_initialize :show_name
   after_find :show_email
+  after_save :send_email
 
   def show_name
     if self.name.present?
@@ -18,5 +19,9 @@ class Publisher < ApplicationRecord
 
   after_touch do
     puts "publisher have touched an object"
+  end
+
+  def send_email
+    BookMailer.send_email(self).deliver
   end
 end
