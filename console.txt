@@ -1,0 +1,19 @@
+-------after touch-------
+after_touch do |book|
+    puts "You have touched an object"
+  end
+
+  after_create_commit :log_book_saved_to_db
+  after_update_commit :log_book_saved_to_db
+  def log_book_saved_to_db
+    puts 'book was saved to database'
+  end
+
+
+  @book = Book.create
+
+  after_save_commit :log_book_saved_to_db
+  
+   def log_book_saved_to_db
+      puts 'book was saved to database'
+    end
